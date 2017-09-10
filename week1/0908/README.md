@@ -14,29 +14,52 @@
 ## 외부 레파지토리를 제공해주는 서비스업체 : GitHub
 
 ## Git 주요 명령어
-    - git init : 내부 저장소 생성. 프로젝트 여러 개 관리할 때는 최상위 폴더에서만 쓰는 것이 좋음
-    - git add <관리할 파일이름> : 로컬에서 관리할 파일을 워크스페이스에서 stage(index)에 올림. add한 후부터 git의 관리 대상이 됨. 파일이름 대신 "."을 넣으면 현재 디렉토리의 모든 파일을 올릴 수 있음
-    - git status : 현재 깃상에서 관리할 수 있는 파일들의 상태 조회 가능. 추가/수정 후 add 하지 않은 파일은 빨간색으로 표시되며, commit 할 준비가 된 파일은 초록색으로 표시됨
-    - git commit -m “message” : stage(index)에 있는 내용을 내부 저장소에 스냅샷으로 저장. 즉, 이전 버전의 파일과의 차이점만 +/-로 기록함. commit한 후부터 파일의 버전을 관리할 수 있으며, 원격(중앙) 저장소에 올릴 수 있음
-    - git branch : 로컬의 branch 목록 조회
-    - git branch -r : 원격의 branch 목록 조회
-    - git branch <브랜치이름> : 새 branch 만듦
-    - git checkout <브랜치이름> : 해당 브랜치로 이동
-    - git checkout <commit_id> : commit_id 상태로 이동. 이렇게 체크아웃된 상태는 브랜치위에 올라가 있지 않음
-    - git merge <브랜치이름> : 브랜치 합침
-    - git branch -d <브랜치이름> : merge한 브랜치 삭제
-    - git branch -D <브랜치이름> : merge 안 한 브랜치 삭제
-    - git branch <브랜치이름> <commit_id> : commit_id에 브랜치를 새로 만듦. 즉, 이전 커밋 포인트에서 브랜치 만들 수 있음 
-    - git log : 내가 커밋한 로그를 찍어줌
-    - git reflog : 내가 커밋한 로그를 요약해서 찍어줌
-    - git diff : 로컬의 branch간 비교, 로컬과 리모트의 내용 비교, commit 간 비교, pull request 내용과 비교 등을 할 수 있음
-    - git reset <id> —hard : 되돌림. 단, 되돌린 이력을 남기지 않음. 되도록 안 쓰는 게 좋음.
-    - git revert <id> : 되돌림. 되돌린 이력을 남김. 되도록 안 쓰는 게 좋음.
-    - git remote add origin <저장소 주소> : 현재 내부 저장소와 원격 저장소 연결
-    - git remote -v : 원격 저장소 설정 확인
-    - git push <원격저장소> <branch> : 원격 저장소에 저장. 보통 git push origin master 라고 씀
-    - git clone <저장소 주소> : 원격 저장소에서 복사본 가져옴. 보통 다른 사람의 깃헙에서 프로젝트 파일을 다운받을 때 씀
-    - git pull <원격저장소> <branch> : 원격 저장소에서 최신 변경사항 받아옴. 로컬로 가져온 후 워크스페이스까지 변경하는 것 포함. 보통 git pull origin master 라고 씀
+- **git init**
+     >- 내부 저장소 생성. 프로젝트 여러 개 관리할 때는 최상위 폴더에서만 쓰는 것이 좋음
+- **git add <관리할 파일이름>**
+     >- 로컬에서 관리할 파일을 워크스페이스에서 stage(index)에 올림. add한 후부터 git의 관리 대상이 됨. 파일이름 대신 "."을 넣으면 현재 디렉토리의 모든 파일을 올릴 수 있음
+- **git status**
+     >- 현재 깃상에서 관리할 수 있는 파일들의 상태 조회 가능. 추가/수정 후 add 하지 않은 파일은 빨간색으로 표시되며, commit 할 준비가 된 파일은 초록색으로 표시됨
+- **git commit -m “message”**
+     >- stage(index)에 있는 내용을 내부 저장소에 스냅샷으로 저장. 즉, 이전 버전의 파일과의 차이점만 +/-로 기록함. commit한 후부터 파일의 버전을 관리할 수 있으며, 원격(중앙) 저장소에 올릴 수 있음
+- **git branch**
+     >- 로컬의 branch 목록 조회
+- **git branch -r**
+     >- 원격의 branch 목록 조회
+- **git branch <브랜치이름>**
+     >- 새 branch 만듦
+- **git checkout <브랜치이름>**
+     >- 해당 브랜치로 이동
+- **git checkout <commit_id>**
+     >- commit_id 상태로 이동. 이렇게 체크아웃된 상태는 브랜치위에 올라가 있지 않음
+- **git merge <브랜치이름>**
+     >- 브랜치 합침
+- **git branch -d <브랜치이름>**
+     >- merge한 브랜치 삭제
+- **git branch -D <브랜치이름>**
+     >- merge 안 한 브랜치 삭제
+- **git branch <브랜치이름> <commit_id>**
+     >- commit_id에 브랜치를 새로 만듦. 즉, 이전 커밋 포인트에서 브랜치 만들 수 있음 
+- **git log**
+     >- 내가 커밋한 로그를 찍어줌
+- **git reflog**
+     >- 내가 커밋한 로그를 요약해서 찍어줌
+- **git diff**
+     >- 로컬의 branch간 비교, 로컬과 리모트의 내용 비교, commit 간 비교, pull request 내용과 비교 등을 할 수 있음
+- **git reset <id> —hard**
+     >- 버전 되돌림. 단, 되돌린 이력을 남기지 않음. 되도록 안 쓰는 게 좋음.
+- **git revert <id>**
+     >- 버전 되돌림. 되돌린 이력을 남김. 되도록 안 쓰는 게 좋음.
+- **git remote add origin <저장소 주소>**
+     >- 현재 내부 저장소와 원격 저장소 연결
+- **git remote -v**
+     >- 원격 저장소 설정 확인
+- **git push <원격저장소> <branch>**
+     >- 원격 저장소에 저장. 보통 git push origin master 라고 씀
+- **git clone <저장소 주소>**
+     >- 원격 저장소에서 복사본 가져옴. 보통 다른 사람의 깃헙에서 프로젝트 파일을 다운받을 때 씀
+- **git pull <원격저장소> <branch>**
+     >- 원격 저장소에서 최신 변경사항 받아옴. 로컬로 가져온 후 워크스페이스까지 변경하는 것 포함. 보통 git pull origin master 라고 씀
 
 
 >- head : 가 옮길 때마다 스냅샷을 하나씩 찍는다고 생각하면 됨
