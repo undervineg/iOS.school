@@ -18,9 +18,12 @@
 ### - 컴퓨터 개론 및 swift 기본 문법
 
 - **[1 Week]**
-  >- [if & for, 함수](https://github.com/undervineg/iOS.school/tree/master/week1/0906)
-  >
-  >- [배열](https://github.com/undervineg/iOS.school/tree/master/week1/0907)
+  
+	>- [if문, for문, 기본함수](https://github.com/undervineg/iOS.school/tree/master/week1/0906)
+	>
+	>- [배열](https://github.com/undervineg/iOS.school/tree/master/week1/0907)
+ >
+	>- [Git]()
 
 <br><br>
 ## 3. Study
