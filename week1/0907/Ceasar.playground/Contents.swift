@@ -1,9 +1,10 @@
-func mkNewIndex(alphabets: [String], element: String, keyNumber: Int)->String{
+func mkNewIndex(_ alphabets: [String], _ element: String, _ keyNumber: Int)->String{
     var newIndex: Int = 0
     let currIndex: Int = alphabets.index(of: element)!
     newIndex = currIndex + keyNumber
     if newIndex > alphabets.count{
-        newIndex -= 26
+        //newIndex -= alphabets.count * (newIndex / alphabets.count)
+        newIndex = (currIndex + keyNumber) % alphabets.count
     }
     
     return alphabets[newIndex]
@@ -16,13 +17,15 @@ func ceasar(_ data:[String], _ keyNum:Int)->[String]{
     
     for elem in data {
         if upperAlphabet.contains(elem){
-            returnVal.append(mkNewIndex(alphabets: upperAlphabet, element: elem, keyNumber: keyNum))
+            let appendVal: String = mkNewIndex(upperAlphabet, elem, keyNum)
+            returnVal.append(appendVal)
         }else{
-            returnVal.append(mkNewIndex(alphabets: lowerAlphabet, element: elem, keyNumber: keyNum))
+            let appendVal: String = mkNewIndex(lowerAlphabet, elem, keyNum)
+            returnVal.append(appendVal)
         }
     }
     return returnVal
 }
 
 
-print(ceasar(["Z","z","Y","y"], 3))
+print(ceasar(["Z","z","Y","y"], 80))
