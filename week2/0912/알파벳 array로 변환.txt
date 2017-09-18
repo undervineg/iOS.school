@@ -1,0 +1,11 @@
+//시저 문제 알파벳 일일이 ""  입력하기 힘드시면 이렇게 하시면 되요 문제는 Character 형으로 들어가 있어서 String으로 사용하시려면 String으로 변환하셔야 되요!
+
+
+var alpha: [Character] = []
+
+for abc in "abcdefghijklmnopqrstuvwxyz".characters
+{
+    alpha.append(abc)
+}
+
+print(alpha)

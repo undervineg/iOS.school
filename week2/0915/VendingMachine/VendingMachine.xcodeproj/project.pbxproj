@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EEAA469D1F6ECDE400B43681 /* cine_family_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46971F6ECDE400B43681 /* cine_family_combo.png */; };
+		EEAA469E1F6ECDE400B43681 /* coke.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46981F6ECDE400B43681 /* coke.png */; };
+		EEAA469F1F6ECDE400B43681 /* double_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46991F6ECDE400B43681 /* double_combo.png */; };
+		EEAA46A01F6ECDE400B43681 /* nacho_squid_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA469A1F6ECDE400B43681 /* nacho_squid_combo.png */; };
+		EEAA46A11F6ECDE400B43681 /* original_popcorn_mid.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA469B1F6ECDE400B43681 /* original_popcorn_mid.png */; };
+		EEAA46A21F6ECDE400B43681 /* sweet_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA469C1F6ECDE400B43681 /* sweet_combo.png */; };
+		EEAA46A41F6ED22000B43681 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46A31F6ED22000B43681 /* logo.png */; };
+		EEAA46A61F6EE8EA00B43681 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46A51F6EE8EA00B43681 /* Material.swift */; };
+		EEAA46AA1F6EE92500B43681 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46A91F6EE92500B43681 /* Menu.swift */; };
+		EEAA46AC1F6EEBDF00B43681 /* Popcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */; };
+		EEAA46AE1F6EEF9700B43681 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AD1F6EEF9700B43681 /* Drinks.swift */; };
+		EEAA46B01F6EF53F00B43681 /* Nacho.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AF1F6EF53F00B43681 /* Nacho.swift */; };
+		EEF1CA3D1F6BF0BE008C19DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */; };
+		EEF1CA3F1F6BF0BE008C19DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */; };
+		EEF1CA421F6BF0BE008C19DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF1CA401F6BF0BE008C19DC /* Main.storyboard */; };
+		EEF1CA441F6BF0BE008C19DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF1CA431F6BF0BE008C19DC /* Assets.xcassets */; };
+		EEF1CA471F6BF0BE008C19DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF1CA451F6BF0BE008C19DC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EEAA46971F6ECDE400B43681 /* cine_family_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cine_family_combo.png; sourceTree = "<group>"; };
+		EEAA46981F6ECDE400B43681 /* coke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coke.png; sourceTree = "<group>"; };
+		EEAA46991F6ECDE400B43681 /* double_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = double_combo.png; sourceTree = "<group>"; };
+		EEAA469A1F6ECDE400B43681 /* nacho_squid_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nacho_squid_combo.png; sourceTree = "<group>"; };
+		EEAA469B1F6ECDE400B43681 /* original_popcorn_mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = original_popcorn_mid.png; sourceTree = "<group>"; };
+		EEAA469C1F6ECDE400B43681 /* sweet_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_combo.png; sourceTree = "<group>"; };
+		EEAA46A31F6ED22000B43681 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		EEAA46A51F6EE8EA00B43681 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
+		EEAA46A91F6EE92500B43681 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popcorn.swift; sourceTree = "<group>"; };
+		EEAA46AD1F6EEF9700B43681 /* Drinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		EEAA46AF1F6EF53F00B43681 /* Nacho.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nacho.swift; sourceTree = "<group>"; };
+		EEF1CA391F6BF0BE008C19DC /* VendingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EEF1CA411F6BF0BE008C19DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEF1CA431F6BF0BE008C19DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEF1CA461F6BF0BE008C19DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEF1CA481F6BF0BE008C19DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEF1CA361F6BF0BE008C19DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EEF1CA301F6BF0BE008C19DC = {
+			isa = PBXGroup;
+			children = (
+				EEF1CA3B1F6BF0BE008C19DC /* VendingMachine */,
+				EEF1CA3A1F6BF0BE008C19DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EEF1CA3A1F6BF0BE008C19DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1CA391F6BF0BE008C19DC /* VendingMachine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEF1CA3B1F6BF0BE008C19DC /* VendingMachine */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */,
+				EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */,
+				EEAA46A51F6EE8EA00B43681 /* Material.swift */,
+				EEAA46AF1F6EF53F00B43681 /* Nacho.swift */,
+				EEAA46AD1F6EEF9700B43681 /* Drinks.swift */,
+				EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */,
+				EEAA46A91F6EE92500B43681 /* Menu.swift */,
+				EEF1CA401F6BF0BE008C19DC /* Main.storyboard */,
+				EEAA46A31F6ED22000B43681 /* logo.png */,
+				EEAA46971F6ECDE400B43681 /* cine_family_combo.png */,
+				EEAA46981F6ECDE400B43681 /* coke.png */,
+				EEAA46991F6ECDE400B43681 /* double_combo.png */,
+				EEAA469A1F6ECDE400B43681 /* nacho_squid_combo.png */,
+				EEAA469B1F6ECDE400B43681 /* original_popcorn_mid.png */,
+				EEAA469C1F6ECDE400B43681 /* sweet_combo.png */,
+				EEF1CA431F6BF0BE008C19DC /* Assets.xcassets */,
+				EEF1CA451F6BF0BE008C19DC /* LaunchScreen.storyboard */,
+				EEF1CA481F6BF0BE008C19DC /* Info.plist */,
+			);
+			path = VendingMachine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEF1CA381F6BF0BE008C19DC /* VendingMachine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEF1CA4B1F6BF0BE008C19DC /* Build configuration list for PBXNativeTarget "VendingMachine" */;
+			buildPhases = (
+				EEF1CA351F6BF0BE008C19DC /* Sources */,
+				EEF1CA361F6BF0BE008C19DC /* Frameworks */,
+				EEF1CA371F6BF0BE008C19DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VendingMachine;
+			productName = VendingMachine;
+			productReference = EEF1CA391F6BF0BE008C19DC /* VendingMachine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEF1CA311F6BF0BE008C19DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "심 승민";
+				TargetAttributes = {
+					EEF1CA381F6BF0BE008C19DC = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EEF1CA341F6BF0BE008C19DC /* Build configuration list for PBXProject "VendingMachine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEF1CA301F6BF0BE008C19DC;
+			productRefGroup = EEF1CA3A1F6BF0BE008C19DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEF1CA381F6BF0BE008C19DC /* VendingMachine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEF1CA371F6BF0BE008C19DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF1CA471F6BF0BE008C19DC /* LaunchScreen.storyboard in Resources */,
+				EEAA46A11F6ECDE400B43681 /* original_popcorn_mid.png in Resources */,
+				EEAA469E1F6ECDE400B43681 /* coke.png in Resources */,
+				EEAA46A01F6ECDE400B43681 /* nacho_squid_combo.png in Resources */,
+				EEF1CA441F6BF0BE008C19DC /* Assets.xcassets in Resources */,
+				EEAA46A21F6ECDE400B43681 /* sweet_combo.png in Resources */,
+				EEAA46A41F6ED22000B43681 /* logo.png in Resources */,
+				EEAA469F1F6ECDE400B43681 /* double_combo.png in Resources */,
+				EEF1CA421F6BF0BE008C19DC /* Main.storyboard in Resources */,
+				EEAA469D1F6ECDE400B43681 /* cine_family_combo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEF1CA351F6BF0BE008C19DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEAA46AE1F6EEF9700B43681 /* Drinks.swift in Sources */,
+				EEF1CA3F1F6BF0BE008C19DC /* ViewController.swift in Sources */,
+				EEAA46A61F6EE8EA00B43681 /* Material.swift in Sources */,
+				EEAA46AC1F6EEBDF00B43681 /* Popcorn.swift in Sources */,
+				EEF1CA3D1F6BF0BE008C19DC /* AppDelegate.swift in Sources */,
+				EEAA46B01F6EF53F00B43681 /* Nacho.swift in Sources */,
+				EEAA46AA1F6EE92500B43681 /* Menu.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEF1CA401F6BF0BE008C19DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEF1CA411F6BF0BE008C19DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEF1CA451F6BF0BE008C19DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEF1CA461F6BF0BE008C19DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEF1CA491F6BF0BE008C19DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EEF1CA4A1F6BF0BE008C19DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEF1CA4C1F6BF0BE008C19DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VendingMachine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.undervine.VendingMachine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EEF1CA4D1F6BF0BE008C19DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VendingMachine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.undervine.VendingMachine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEF1CA341F6BF0BE008C19DC /* Build configuration list for PBXProject "VendingMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF1CA491F6BF0BE008C19DC /* Debug */,
+				EEF1CA4A1F6BF0BE008C19DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEF1CA4B1F6BF0BE008C19DC /* Build configuration list for PBXNativeTarget "VendingMachine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEF1CA4C1F6BF0BE008C19DC /* Debug */,
+				EEF1CA4D1F6BF0BE008C19DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEF1CA311F6BF0BE008C19DC /* Project object */;
+}

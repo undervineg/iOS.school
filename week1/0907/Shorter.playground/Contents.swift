@@ -30,4 +30,4 @@ func shorter(_ num: Int)->String{
     return returnVal
 }
 
-print(shorter(1002233444))
+print(shorter(1002233422))

@@ -28,4 +28,4 @@ func ceasar(_ data:[String], _ keyNum:Int)->[String]{
 }
 
 
-print(ceasar(["Z","z","Y","y"], 80))
+print(ceasar(["Z","z","Y","y"], 101))
