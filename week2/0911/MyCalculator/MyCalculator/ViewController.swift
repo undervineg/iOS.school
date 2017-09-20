@@ -11,11 +11,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var displayLabel: UILabel!
-    var inputText: String = "0"     // 레이블에 입력할 텍스트
-    var sum: Double = 0.0           // 연산결과를 저장할 변수
-    var op: String = ""             // 이전 연산자
-    var isOpPressed: Bool = false   // 연산자 플래그. 연산자 연속 입력 방지
-    var isError: Bool = false       // 0으로 나누는 등 예외 방지
+    
+    var inputText: String = "0"         // 레이블에 입력할 텍스트
+    var sum: Double = 0.0               // 연산결과를 저장할 변수
+    var op: String = ""                 // 전전 연산자
+    var isDividedByZero: Bool = false   // 나누기 0 방지
+    var isOpPressed: Bool = false       // 연산자 연속 누름 방지
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,76 +29,90 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // 숫자 버튼 클릭 시
     @IBAction func numberBtnClick(btn: UIButton){
-        let btnTitleLabel = btn.titleLabel!.text!   // 현재 누른 숫자
+        guard let btnTitleLabel = btn.titleLabel!.text else{ return }
+        // 숫자버튼을 눌렀으니 연산자 버튼 플래그는 false로 바꿈
         isOpPressed = false
         
-        switch displayLabel.text! {
-        case "0":
-            inputText = btnTitleLabel
-        default:
-            inputText += btnTitleLabel
-        }
+        // 옵셔널 바인딩. 디스플레이 라벨에 표시된 텍스트(수)
+        if let displayLb = displayLabel.text{
+            switch displayLb {
+            // 0이 표시돼 있는 경우, 방금 입력한 digit 1개만 대입. ex) 0 --> 3
+            case "0":
+                inputText = btnTitleLabel
+            // 0 외의 digit이 표시돼 있는 경우, 방금 입력한 digit을 기존 digit 옆에 붙임. ex) 13 --> 135
+            default:
+                inputText += btnTitleLabel
+            }
+        }else{ return }
         
         displayLabel.text = inputText               // 입력한 숫들을 레이블에 표시
     }
     
+    // AC 버튼 클릭 시
     @IBAction func resetNumber(btn: UIButton){
-        displayLabel.text = "0"
-        inputText = ""
+        inputText = "0"
+        displayLabel.text = inputText   // 현재 라벨에 0 표시
+        sum = 0.0                       // 연산결과를 저장할 변수
+        op = ""                         // 전전 연산자
+        isDividedByZero = false         // 나누기 0 방지
+        isOpPressed = false             // 연산자 연속 누름 방지
+        
     }
     
+    // 연산자 버튼 클릭 시(+, -, *, /, =)
     @IBAction func result(btn: UIButton){
-        // 이전 연산자를 op에 저장 ex. 1+2- 일 때, '+'를 저장
-        let currDisplayNum: Double = Double(displayLabel.text!)!
         
+        guard let displayText = displayLabel.text else{
+            inputText = "오류"
+            return
+        }
+        guard let currDisplayNum = Double(displayText) else{
+            inputText = "오류"
+            return
+        }
+        
+        // 전전 연산자를 op 프로퍼티에 저장. ex) '1+2-' --> '+' 저장
+        // 전전 연산자 op로 이전 sum과 현재 레이블값을 계산하여 다시 sum에 저장. ex) 1+2-3+ --> sum = 3-3
         switch op {
         case "+":
-            sum += currDisplayNum                   // 이전 sum 과 현재 레이블 을 이전 op 로 계산
-            break
+            sum += currDisplayNum
         case "-":
             sum -= currDisplayNum
-            break
         case "×":
             sum *= currDisplayNum
             break
         case "/":
-            if currDisplayNum == 0{                 // 0 으로 나눈 경우 에외 플래그 on
-                isError = true
+            // 0 으로 나눈 경우, 에러플래그 on
+            if currDisplayNum == 0{
+                isDividedByZero = true
+            }else{
+                sum /= currDisplayNum
             }
-            sum /= currDisplayNum
-            break
         case "=":
-            isError = false
+            isDividedByZero = false
             isOpPressed = false
-            break
-        default:                                    // 이전 op가 없을 때(최초의 op일 때)
-            sum = currDisplayNum                    // sum 에 현재 레이블 값을 저장
-            break
+        default:
+            // 이전 op가 없을 때 (즉, 최초의 op일 때)
+            // sum 에 현재 레이블 값을 저장
+            sum = currDisplayNum
         }
         
-        /*
-        if op == "e"
-        {
-            op = btn.titleLabel!.text!                  // 현재 누른 연산자를 op에 저장
-        }else
-        {
-            isError = true
-        }
-        */
         
-        if isError {
-            displayLabel!.text = "오류!"
-            isError = false
-        }else if isOpPressed {
-            displayLabel!.text = "오류!"
-            isOpPressed = false
+        if isDividedByZero {
+            inputText = "오류!"
+            isDividedByZero = false
+        }else if isOpPressed{
+            inputText = "오류!"
         }else{
-            displayLabel!.text = String(Int(sum))       // 레이블에 계산결과 표시
+            inputText = String(Int(sum))       // 레이블에 계산결과 표시
         }
         
-        isOpPressed = true
-        inputText = ""
+        isOpPressed = true                     // 숫자 버튼이 눌리면 false, 연산자 버튼이 눌리면 true
+        op = btn.currentTitle!                 // op에 방금 입력한 연산자를 저장
+        displayLabel!.text = inputText         // 디스플레이 라벨에 계산결과 또는 오류 노출
+        inputText = ""                         // 계산결과 리셋
     }
     
 }

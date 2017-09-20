@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE5F17E71F6FB238004B4D98 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5F17E61F6FB238004B4D98 /* Menu.swift */; };
+		EE7E43781F6F8AA600BBDE7C /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E43771F6F8AA600BBDE7C /* VendingMachine.swift */; };
 		EEAA469D1F6ECDE400B43681 /* cine_family_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46971F6ECDE400B43681 /* cine_family_combo.png */; };
 		EEAA469E1F6ECDE400B43681 /* coke.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46981F6ECDE400B43681 /* coke.png */; };
 		EEAA469F1F6ECDE400B43681 /* double_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46991F6ECDE400B43681 /* double_combo.png */; };
@@ -15,10 +17,6 @@
 		EEAA46A21F6ECDE400B43681 /* sweet_combo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA469C1F6ECDE400B43681 /* sweet_combo.png */; };
 		EEAA46A41F6ED22000B43681 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EEAA46A31F6ED22000B43681 /* logo.png */; };
 		EEAA46A61F6EE8EA00B43681 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46A51F6EE8EA00B43681 /* Material.swift */; };
-		EEAA46AA1F6EE92500B43681 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46A91F6EE92500B43681 /* Menu.swift */; };
-		EEAA46AC1F6EEBDF00B43681 /* Popcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */; };
-		EEAA46AE1F6EEF9700B43681 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AD1F6EEF9700B43681 /* Drinks.swift */; };
-		EEAA46B01F6EF53F00B43681 /* Nacho.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAA46AF1F6EF53F00B43681 /* Nacho.swift */; };
 		EEF1CA3D1F6BF0BE008C19DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */; };
 		EEF1CA3F1F6BF0BE008C19DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */; };
 		EEF1CA421F6BF0BE008C19DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF1CA401F6BF0BE008C19DC /* Main.storyboard */; };
@@ -27,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE5F17E61F6FB238004B4D98 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		EE7E43771F6F8AA600BBDE7C /* VendingMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		EEAA46971F6ECDE400B43681 /* cine_family_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cine_family_combo.png; sourceTree = "<group>"; };
 		EEAA46981F6ECDE400B43681 /* coke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coke.png; sourceTree = "<group>"; };
 		EEAA46991F6ECDE400B43681 /* double_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = double_combo.png; sourceTree = "<group>"; };
@@ -35,10 +35,6 @@
 		EEAA469C1F6ECDE400B43681 /* sweet_combo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweet_combo.png; sourceTree = "<group>"; };
 		EEAA46A31F6ED22000B43681 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		EEAA46A51F6EE8EA00B43681 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
-		EEAA46A91F6EE92500B43681 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popcorn.swift; sourceTree = "<group>"; };
-		EEAA46AD1F6EEF9700B43681 /* Drinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
-		EEAA46AF1F6EF53F00B43681 /* Nacho.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nacho.swift; sourceTree = "<group>"; };
 		EEF1CA391F6BF0BE008C19DC /* VendingMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VendingMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,10 +77,8 @@
 				EEF1CA3C1F6BF0BE008C19DC /* AppDelegate.swift */,
 				EEF1CA3E1F6BF0BE008C19DC /* ViewController.swift */,
 				EEAA46A51F6EE8EA00B43681 /* Material.swift */,
-				EEAA46AF1F6EF53F00B43681 /* Nacho.swift */,
-				EEAA46AD1F6EEF9700B43681 /* Drinks.swift */,
-				EEAA46AB1F6EEBDF00B43681 /* Popcorn.swift */,
-				EEAA46A91F6EE92500B43681 /* Menu.swift */,
+				EE7E43771F6F8AA600BBDE7C /* VendingMachine.swift */,
+				EE5F17E61F6FB238004B4D98 /* Menu.swift */,
 				EEF1CA401F6BF0BE008C19DC /* Main.storyboard */,
 				EEAA46A31F6ED22000B43681 /* logo.png */,
 				EEAA46971F6ECDE400B43681 /* cine_family_combo.png */,
@@ -179,13 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEAA46AE1F6EEF9700B43681 /* Drinks.swift in Sources */,
 				EEF1CA3F1F6BF0BE008C19DC /* ViewController.swift in Sources */,
 				EEAA46A61F6EE8EA00B43681 /* Material.swift in Sources */,
-				EEAA46AC1F6EEBDF00B43681 /* Popcorn.swift in Sources */,
 				EEF1CA3D1F6BF0BE008C19DC /* AppDelegate.swift in Sources */,
-				EEAA46B01F6EF53F00B43681 /* Nacho.swift in Sources */,
-				EEAA46AA1F6EE92500B43681 /* Menu.swift in Sources */,
+				EE7E43781F6F8AA600BBDE7C /* VendingMachine.swift in Sources */,
+				EE5F17E71F6FB238004B4D98 /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

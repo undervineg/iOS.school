@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var inputMoney: UILabel!
     @IBOutlet weak var informLabel: UILabel!
+    
     @IBOutlet weak var menu_coke: UILabel!
     @IBOutlet weak var menu_originalPopcorn: UILabel!
     @IBOutlet weak var menu_doubleCombo: UILabel!
@@ -19,9 +20,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var menu_nachoCombo: UILabel!
     @IBOutlet weak var menu_cineFamilyCombo: UILabel!
     
-    var money: Int = 0
-    let formatter = NumberFormatter()
-    let menus: [String] = ["콜라(중)", "오리지널팝콘(중)", "더블콤보", "스위트콤보", "나쵸즉석구이콤보", "씨네패밀리콤보"]
+    var money: Int = 0 {
+        willSet(newValue){
+            if newValue == 0{
+                inputMoney.text! = "\(newValue)원"
+                informLabel.text! = "잔액을 받으세요."
+            }else{
+                inputMoney.text! = "\(formatter.string(from: newValue as NSNumber)!)원"
+            }
+        }
+    }
+    var formatter = NumberFormatter()
+    //var machine = VendingMachine()
+    
+    enum Menus {
+        case coke(name: String, price: Int)
+        case originalPopcorn(name: String, price: Int)
+        case doubleCombo(name: String, price: Int)
+        case sweetCombo(name: String, price: Int)
+        case nachoCombo(name: String, price: Int)
+        case cineFamilyCombo(name: String, price: Int)
+    }
+    
+    //let menus: [String] = ["콜라(중)", "오리지널팝콘(중)", "더블콤보", "스위트콤보", "나쵸즉석구이콤보", "씨네패밀리콤보"]
+    
+    let menus: [Menus] = [.coke(name: "콜라(중)", price: 2200), .originalPopcorn(name: "오리지널팝콘(중)", price: 4500), .doubleCombo(name: "더블콤보", price: 11000), .sweetCombo(name: "스위트콤보", price: 8500), .nachoCombo(name: "나쵸즉석구이콤보", price: 11000), .cineFamilyCombo(name: "씨네패밀리콤보", price: 17500)]
     var stock: Dictionary<String, Int> = Dictionary()
     var isSoldOut = false
     
@@ -31,11 +54,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // 숫자에 콤마를 넣기 위한 fomatter
+        formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        
+        //machine = VendingMachine()
         
         // 재고 10개씩 일괄 입력
         for menu in menus{
-            stock[menu] = 10
+            print(menu)
+            //stock[menu] = 10
         }
         print(stock)
         
@@ -66,19 +93,16 @@ class ViewController: UIViewController {
     
     func insertMoney(_ moneyUnit: Int){
         money += moneyUnit
-        inputMoney.text! = "\(formatter.string(from: money as NSNumber)!)원"
     }
     
     @IBAction func cancel(_ sender: Any) {
         money = 0
-        inputMoney.text! = "\(money)원"
-        informLabel.text! = "잔액을 받으세요."
     }
     
     @IBAction func coke(_ sender: Any) {
         operate(2200, menuIdx: 0)
         if isSoldOut == true{
-            menu_coke.text! = "품절"
+            menu_coke.text = "품절"
             menu_coke.textColor = UIColor.red
             isSoldOut = false
         }
@@ -87,7 +111,7 @@ class ViewController: UIViewController {
     @IBAction func originalPopcorn(_ sender: Any) {
         operate(4500, menuIdx: 1)
         if isSoldOut == true{
-            menu_originalPopcorn.text! = "품절"
+            menu_originalPopcorn.text = "품절"
             menu_originalPopcorn.textColor = UIColor.red
             isSoldOut = false
         }
@@ -96,7 +120,7 @@ class ViewController: UIViewController {
     @IBAction func doubleCombo(_ sender: Any) {
         operate(11000, menuIdx: 2)
         if isSoldOut == true{
-            menu_doubleCombo.text! = "품절"
+            menu_doubleCombo.text = "품절"
             menu_doubleCombo.textColor = UIColor.red
             isSoldOut = false
         }
@@ -105,7 +129,7 @@ class ViewController: UIViewController {
     @IBAction func sweetCombo(_ sender: Any) {
         operate(8500, menuIdx: 3)
         if isSoldOut == true{
-            menu_sweetCombo.text! = "품절"
+            menu_sweetCombo.text = "품절"
             menu_sweetCombo.textColor = UIColor.red
             isSoldOut = false
         }
@@ -114,7 +138,7 @@ class ViewController: UIViewController {
     @IBAction func nachoCombo(_ sender: Any) {
         operate(11000, menuIdx: 4)
         if isSoldOut == true{
-            menu_nachoCombo.text! = "품절"
+            menu_nachoCombo.text = "품절"
             menu_nachoCombo.textColor = UIColor.red
             isSoldOut = false
         }
@@ -123,26 +147,31 @@ class ViewController: UIViewController {
     @IBAction func cineFamilyCombo(_ sender: Any) {
         operate(17500, menuIdx: 5)
         if isSoldOut == true{
-            menu_cineFamilyCombo.text! = "품절"
+            menu_cineFamilyCombo.text = "품절"
             menu_cineFamilyCombo.textColor = UIColor.red
             isSoldOut = false
         }
     }
     
     func operate(_ price: Int, menuIdx: Int){
+        
+        guard let stock = stock[menus[menuIdx]], let moneyFormatter = formatter.string(from: money as NSNumber) else{ return }
+        
+        var stockOfMenu = stock
+        
         if money < price{
             // 잔액이 부족할 시
-            informLabel.text! = "잔액이 모자랍니다."
-        }else if stock[menus[menuIdx]]! < 0{
+            informLabel.text = "잔액이 모자랍니다."
+        }else if stockOfMenu < 0{
             // 품절 시
-            informLabel.text! = "품절입니다."
+            informLabel.text = "품절입니다."
             isSoldOut = true
         }else{
             // 정상 구매 시
-            stock[menus[menuIdx]]! -= 1   // 재고-1
+            stockOfMenu -= 1   // 재고-1
             money -= price
-            inputMoney.text! = "\(formatter.string(from: money as NSNumber)!)원"
-            informLabel.text! = "\(menus[menuIdx])를 받으세요."
+            inputMoney.text = "\(moneyFormatter)원"
+            informLabel.text = "\(menus[menuIdx])를 받으세요."
         }
     }
 }

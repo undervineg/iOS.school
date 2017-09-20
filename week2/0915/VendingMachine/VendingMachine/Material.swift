@@ -9,22 +9,30 @@
 import Foundation
 
 class Material{
-    private let name: String = ""
-    private var useUnit: Int = 0
+    private let name: String
+    private let useUnits: Dictionary<String, Int>
     private var stock: Int = 0
     
     
-    init(stock: Int){
-        self.stock = stock
-    }
-    
-    init(useUnit: Int, stock: Int){
-        self.useUnit = useUnit
-        self.stock = stock
+    init(name: String, useUnits: [String:Int]){
+        self.name = name
+        self.useUnits = useUnits
     }
     
     func getName()->String{
         return self.name
+    }
+    
+    func getUseUnits()->[String:Int]{
+        return self.useUnits
+    }
+    
+    func getUseUnitAmount(unit: String)->Int{
+        if let unit = useUnits[unit]{
+            return unit
+        }else{
+            return 0
+        }
     }
     
     func getStock()->Int{
@@ -35,7 +43,7 @@ class Material{
         self.stock = amount
     }
     
-    func use() {
-        self.stock -= self.useUnit
+    func use(sizeOf: String) {
+        self.stock -= self.getUseUnitAmount(unit: sizeOf)
     }
 }

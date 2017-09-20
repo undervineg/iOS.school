@@ -17,12 +17,17 @@
 ## 2. iOS School
 ### - 컴퓨터 개론 및 swift 기본 문법
 
-- **[1 Week]**
+- **[Week 1]**
   
 	>- [if문, for문, 기본함수](https://github.com/undervineg/iOS.school/tree/master/week1/0906)
 	>
 	>- [배열](https://github.com/undervineg/iOS.school/tree/master/week1/0907)
 	>
+	>- [Git](https://github.com/undervineg/iOS.school/tree/master/week1/0908)
+	
+- **[Week 2]**
+
+	>- []()
 
 <br><br>
 ## 3. Study
