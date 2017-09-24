@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE406C6D1F72388000FD0663 /* UpgradeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE406C6C1F72388000FD0663 /* UpgradeCalculatorViewController.swift */; };
+		EE406C6F1F724BA500FD0663 /* TestCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE406C6E1F724BA500FD0663 /* TestCalculatorViewController.swift */; };
 		EED42C3A1F667F0B002E3B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED42C391F667F0B002E3B96 /* AppDelegate.swift */; };
 		EED42C3C1F667F0B002E3B96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED42C3B1F667F0B002E3B96 /* ViewController.swift */; };
 		EED42C3F1F667F0B002E3B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED42C3D1F667F0B002E3B96 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE406C6C1F72388000FD0663 /* UpgradeCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpgradeCalculatorViewController.swift; sourceTree = "<group>"; };
+		EE406C6E1F724BA500FD0663 /* TestCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCalculatorViewController.swift; sourceTree = "<group>"; };
 		EED42C361F667F0B002E3B96 /* MyCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED42C391F667F0B002E3B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED42C3B1F667F0B002E3B96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			children = (
 				EED42C391F667F0B002E3B96 /* AppDelegate.swift */,
 				EED42C3B1F667F0B002E3B96 /* ViewController.swift */,
+				EE406C6C1F72388000FD0663 /* UpgradeCalculatorViewController.swift */,
+				EE406C6E1F724BA500FD0663 /* TestCalculatorViewController.swift */,
 				EEDC4A181F67B9A100EBF334 /* Subject.swift */,
 				EEDC4A551F67CEA500EBF334 /* Student.swift */,
 				EEDC4A571F67D10600EBF334 /* SubjectCalculation.swift */,
@@ -150,6 +156,8 @@
 				EED42C3A1F667F0B002E3B96 /* AppDelegate.swift in Sources */,
 				EEDC4A561F67CEA500EBF334 /* Student.swift in Sources */,
 				EEDC4A581F67D10600EBF334 /* SubjectCalculation.swift in Sources */,
+				EE406C6D1F72388000FD0663 /* UpgradeCalculatorViewController.swift in Sources */,
+				EE406C6F1F724BA500FD0663 /* TestCalculatorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
