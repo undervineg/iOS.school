@@ -25,13 +25,11 @@ class NumberBoard{
     func input(aNumber pressedNumber: UIButton, in playerNumbers: [Int])->[Int]{
         var playerNumbers = playerNumbers
         
-        // 중복입력 시 알럿
-        if playerNumbers.contains(pressedNumber.tag){
-            util!.presentAlert(title: "중복되는 숫자는 입력할 수 없습니다.", msg: "")
+        // 중복이 아닌 수만 배열에 저장
+        if !playerNumbers.contains(pressedNumber.tag){
+            // 입력 순서대로 배열에 저장
+            playerNumbers.append(pressedNumber.tag)
         }
-        
-        // 입력 순서대로 배열에 저장
-        playerNumbers.append(pressedNumber.tag)
         
         return playerNumbers
     }
@@ -42,7 +40,7 @@ class NumberBoard{
         numberLabels![playerNumbers.endIndex-1].text = String(pressedNumber.tag)
     }
     
-    func eraseANumber(from playerNumbers: [Int])->[Int]{
+    func eraseLastNumber(from playerNumbers: [Int])->[Int]{
         // 마지막 입력 넘버를 배열에서 제거
         var playerNumbers = playerNumbers
         playerNumbers.removeLast()
@@ -51,7 +49,7 @@ class NumberBoard{
         return playerNumbers
     }
     
-    func erase(){
+    func eraseAll(){
         for label in self.numberLabels!{
             label.text = ""
         }

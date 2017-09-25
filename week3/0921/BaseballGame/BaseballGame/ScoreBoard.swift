@@ -36,7 +36,7 @@ class ScoreBoard{
         player.playerNumbers = []
         
         // 입력라벨은 초기화
-        numberBoard.erase()
+        numberBoard.eraseAll()
         
     }
     

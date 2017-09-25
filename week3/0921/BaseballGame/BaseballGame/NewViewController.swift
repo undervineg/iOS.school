@@ -11,12 +11,12 @@ import UIKit
 class NewViewController: UIViewController {
     
     // MARK: - UI properties
-    @IBOutlet weak var resultLb: UILabel!
-    @IBOutlet weak var inputLb1: UILabel!
-    @IBOutlet weak var inputLb2: UILabel!
-    @IBOutlet weak var inputLb3: UILabel!
-    @IBOutlet weak var historyLb: UITextView!
-    @IBOutlet weak var startEndBtn: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var numberLabel1: UILabel!
+    @IBOutlet weak var numberLabel2: UILabel!
+    @IBOutlet weak var numberLabel3: UILabel!
+    @IBOutlet weak var recordTextView: UITextView!
+    @IBOutlet weak var startButton: UIButton!
     
     
     // MARK: - Properties
@@ -35,9 +35,9 @@ class NewViewController: UIViewController {
         player = Player()
         judge = Judge()
         generator = Generator()
-        numberBoard = NumberBoard.init(numberLabel1: inputLb1, numberLabel2: inputLb2, numberLabel3: inputLb3)
-        scoreBoard = ScoreBoard(scoreLabel: resultLb)
-        recordBoard = RecordBoard(recordTextView: historyLb)
+        numberBoard = NumberBoard.init(numberLabel1: numberLabel1, numberLabel2: numberLabel2, numberLabel3: numberLabel3)
+        scoreBoard = ScoreBoard(scoreLabel: scoreLabel)
+        recordBoard = RecordBoard(recordTextView: recordTextView)
         util = Util()
         util!.changeLabel(label: (scoreBoard?.scoreLabel!)!, msg: "Press '시작'")
     }
@@ -51,20 +51,19 @@ class NewViewController: UIViewController {
     
     // MARK: - IBActions
     // 시작/초기화 버튼 클릭 시
-    @IBAction func clickStartEndBtn(_ sender: UIButton) {
+    @IBAction func handleStartButton(_ sender: UIButton) {
         guard let player = player, let scoreBoard = scoreBoard, let recordBoard = recordBoard else{ return }
-        
         // 대기중
         if sender.currentTitle == "시작"{
-            player.gameStart(button: sender, scoreLabel: resultLb)
+            player.gameStart(button: sender, scoreLabel: scoreLabel)
         }else if sender.currentTitle == "초기화"{   // else 안 쓰면 작동 안됨 (why?..)
-            player.gameReset(button: sender, scoreBoard: scoreBoard, recordBoard: recordBoard, scoreLabel: resultLb, recordTextView: historyLb)
+            player.gameReset(button: sender, scoreBoard: scoreBoard, recordBoard: recordBoard, scoreLabel: scoreLabel, recordTextView: recordTextView)
         }
     }
     
     
     // 숫자 버튼 클릭 시 실행
-    @IBAction func clickNumberBtn(_ sender: UIButton) {
+    @IBAction func handleNumberButton(_ sender: UIButton) {
         guard let player = player, let numberBoard = numberBoard else{ return }
         if player.isRunning! && player.playerLastIndex! < numberBoard.numberLabelsCount!{
             player.playerNumbers = numberBoard.input(aNumber: sender, in: player.playerNumbers!)
@@ -74,7 +73,7 @@ class NewViewController: UIViewController {
     
     
     // 확인 버튼 클릭 시 실행
-    @IBAction func clickCheckBtn(_ sender: UIButton) {
+    @IBAction func handleCheckButton(_ sender: UIButton) {
         guard let _ = player, let judge = judge, let scoreBoard = scoreBoard, let _ = numberBoard else{ return }
         
         print(player!.playerNumbers!)
@@ -89,7 +88,7 @@ class NewViewController: UIViewController {
     
     
     // cancel 버튼 클릭 시 실행
-    @IBAction func clickCancelBtn(_ sender: UIButton) {
+    @IBAction func handleCancelButton(_ sender: UIButton) {
         guard let player = player, let numberBoard = numberBoard else{
             print("player or numberBoard: nil")
             return
@@ -97,7 +96,7 @@ class NewViewController: UIViewController {
         
         // 취소 버튼은 게임중에만 동작함
         if player.isRunning!{
-            player.playerNumbers = numberBoard.eraseANumber(from: player.playerNumbers!)
+            player.playerNumbers = numberBoard.eraseLastNumber(from: player.playerNumbers!)
         }
     }
 

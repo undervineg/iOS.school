@@ -20,7 +20,8 @@ class Util{
         label.text = msg
     }
     
-    // 알럿 노출 함수
+    /*
+    // 알럿 노출 함수 - 알럿과 같이 UI 관련 모듈은 view controller에 쓴다.
     func presentAlert(title: String, msg: String){
         // 알럿 본체 생성
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -28,7 +29,7 @@ class Util{
         let alertaction = UIAlertAction(title: "확인", style: .default, handler: nil)
         // 알럿 본체에 액션 붙임
         alert.addAction(alertaction)
-        // 알럿 노출
-        alert.present(alert, animated: true, completion: nil)
+        presentAlert(title: "중복되는 숫자는 입력할 수 없습니다.", msg: "")
     }
+     */
 }
