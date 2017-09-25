@@ -27,7 +27,7 @@
 	
 - **[Week 2]**
 
-	>- []()
+	>- [클래스 실습: Baseball Game](https://github.com/undervineg/iOS.school/tree/master/week3/0921/BaseballGame)
 
 <br><br>
 ## 3. Study
