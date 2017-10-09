@@ -33,6 +33,9 @@ func performOpertion(num1: Int, num2: Int, symbol: Operation) -> Int {
 // 함수호출
 print(performOpertion(num1: 20, num2: 10, symbol: Operation.add))
 
+
+
+
 // 사칙연산을 위한 Enum이고 연관값으로 함수(클로저)를 받는 Enum
 enum OperationClosure {
   case add((Int, Int) -> Int)           // add항목은 연관값으로 두개의 Int를 파라메터로 받아 Int를 반환해주는 함수를 가진다.

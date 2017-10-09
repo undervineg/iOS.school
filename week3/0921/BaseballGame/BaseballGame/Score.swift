@@ -9,10 +9,10 @@
 import Foundation
 
 class Score{
-    var strike: Int?
-    var ball: Int?
-    var out: Int?
-    var scoreText: String?
+    var strike: Int
+    var ball: Int
+    var out: Int
+    var scoreText: String
     
     init(){
         self.strike = 0
@@ -23,14 +23,14 @@ class Score{
     
     func makeString(player: Player){
         // 문자열로 점수를 넣어 전달
-        if self.strike! > 0 {
-            self.scoreText! += "S" + String(describing: self.strike!) + " "
+        if self.strike > 0 {
+            self.scoreText += "S" + String(describing: self.strike) + " "
         }
-        if self.ball! > 0 {
-            self.scoreText! += "B" + String(describing: self.ball!) + " "
+        if self.ball > 0 {
+            self.scoreText += "B" + String(describing: self.ball) + " "
         }
-        if self.out! > 0 {
-            self.scoreText! += "O" + String(describing: self.out!)
+        if self.out > 0 {
+            self.scoreText += "O" + String(describing: self.out)
         }
     }
 }

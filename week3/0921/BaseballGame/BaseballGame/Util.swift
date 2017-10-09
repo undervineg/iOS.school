@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class Util{
+class Util{ // 이런 클래스의 함수들은 class 함수나 static 함수로 만들면 좋다.
     // 상태에 따른 버튼 변경
-    func changeButton(btn: UIButton, btnLabel: String, btnColor: UIColor){
+    class func changeButton(btn: UIButton, btnLabel: String, btnColor: UIColor){
         btn.setTitle(btnLabel, for: UIControlState.normal)  // 버튼 명
         btn.backgroundColor = btnColor                      // 버튼 색상
     }
     
-    func changeLabel(label: UILabel, msg: String){
+    class func changeLabel(label: UILabel, msg: String){
         label.text = msg
     }
     

@@ -10,15 +10,13 @@ import Foundation
 import UIKit
 
 class NumberBoard{
-    private var numberLabels: [UILabel]?
+    private var numberLabels: [UILabel]
     var numberLabelsCount: Int?{
-        get{ return numberLabels?.count }
+        get{ return numberLabels.count }
     }
-    private let util: Util?
     
     
     init(numberLabel1: UILabel, numberLabel2: UILabel, numberLabel3: UILabel){
-        self.util = Util()
         self.numberLabels = [numberLabel1, numberLabel2, numberLabel3]
     }
     
@@ -37,7 +35,7 @@ class NumberBoard{
     func present(playerNumbers: [Int], in pressedNumber: UIButton){
         // 방금 입력한 수의 인덱스로 라벨 인덱스에 접근하여 숫자 저장
         // endIndex는 1,2,3 이렇게 시작되므로, 라벨 배열의 인덱스에 맞추기 위해 -1을 함
-        numberLabels![playerNumbers.endIndex-1].text = String(pressedNumber.tag)
+        numberLabels[playerNumbers.endIndex-1].text = String(pressedNumber.tag)
     }
     
     func eraseLastNumber(from playerNumbers: [Int])->[Int]{
@@ -45,12 +43,12 @@ class NumberBoard{
         var playerNumbers = playerNumbers
         playerNumbers.removeLast()
         // 마지막 입력 넘버를 라벨에서 제거 (위에서 한 개를 지웠으므로 endIndex에 -1 안해도 됨)
-        numberLabels![playerNumbers.endIndex].text = ""
+        numberLabels[playerNumbers.endIndex].text = ""
         return playerNumbers
     }
     
     func eraseAll(){
-        for label in self.numberLabels!{
+        for label in self.numberLabels{
             label.text = ""
         }
     }

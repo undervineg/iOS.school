@@ -1,0 +1,141 @@
+
+class ViewController: UIViewController, UITextFieldDelegate {
+
+    
+    var btnList:[UIButton] = []
+    
+    var tf:UITextField!
+    var lb:UILabel!
+    
+    var temp:String = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.red
+        //createBtn()
+        //setLayout()
+        
+        let okBtn:UIButton = UIButton(type: .detailDisclosure)
+        okBtn.frame = CGRect(x: 320, y: 40, width: 50, height: 40)
+        okBtn.addTarget(self, action: #selector(ViewController.handlerOkBtn(_:)), for: .touchUpInside)
+        view.addSubview(okBtn)
+        
+        lb = UILabel(frame: CGRect(x: 10, y: 90, width: 350, height: 200))
+        lb.numberOfLines = 0
+        
+        view.addSubview(lb)
+        
+        tf = UITextField(frame: CGRect(x: 10, y: 40, width: 300, height: 40))
+        tf.borderStyle = .line
+        tf.backgroundColor = .white
+        /*********델리게이트 사용1********/
+        //UITextFieldDelegate
+        tf.delegate = self
+        /*********델리게이트********/
+        tf.placeholder = "여기에 입력하세요"
+        view.addSubview(tf)
+        
+    }
+    /*********델리게이트 method********/
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //키보드 내리기
+        tf.resignFirstResponder()
+        
+        return true
+    }
+    
+    func handlerOkBtn(_ sender:UIButton)
+    {
+        temp += tf.text! + "\n"
+        lb.text = temp
+        tf.text = ""
+        
+    }
+    
+    
+    func createBtn()
+    {
+        for index in 0..<9
+        {
+            let btn:UIButton = UIButton(type: .custom)
+            btn.tag = index
+            btn.backgroundColor = .blue
+            view.addSubview(btn)
+            btn.addTarget(self, action: #selector(ViewController.onBtnAction(_:)), for: .touchUpInside)
+            btnList.append(btn)
+            //추가 기능
+            btn.layer.borderColor = UIColor.black.cgColor
+            btn.layer.borderWidth = 1
+            btn.layer.cornerRadius = 5
+        }
+    }
+    
+    func setLayout()
+    {
+        let btnWidth = self.view.bounds.size.width/3
+        let btnHeight = btnWidth
+        for btn in btnList
+        {
+            let index = btn.tag
+            let row = index % 3
+            let cal = index / 3
+            
+            btn.frame = CGRect(x: CGFloat(row) * btnWidth, y: CGFloat(cal) * btnHeight, width: btnWidth, height: btnHeight)
+        }
+    }
+    
+    
+    @objc func onBtnAction(_ sender:UIButton) {
+        
+        let index = sender.tag
+        let isEvenNum = isEvenNumber(num: index)
+        
+        
+        for btn in btnList
+        {
+            let subBtnisEven =  isEvenNumber(num: btn.tag)
+            
+            if isEvenNum == subBtnisEven
+            {
+                btn.backgroundColor = .yellow
+            }else
+            {
+                btn.backgroundColor = .blue
+            }
+        }
+        
+        /*
+        if sender.isSelected
+        {
+            sender.backgroundColor = .blue
+            sender.isSelected = false
+        }else
+        {
+            sender.backgroundColor = .yellow
+            sender.isSelected = true
+        }
+         */
+        
+    }
+
+    func isEvenNumber(num:Int) -> Bool
+    {
+        if num % 2 == 0
+        {
+            return true
+        }
+        
+        return false
+    }
+    
+    
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+
+}
+

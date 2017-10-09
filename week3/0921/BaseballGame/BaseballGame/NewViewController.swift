@@ -26,7 +26,6 @@ class NewViewController: UIViewController {
     var numberBoard: NumberBoard?
     var scoreBoard: ScoreBoard?
     var recordBoard: RecordBoard?
-    var util: Util?
     
     
     // MARK: - Life Cycle
@@ -38,8 +37,7 @@ class NewViewController: UIViewController {
         numberBoard = NumberBoard.init(numberLabel1: numberLabel1, numberLabel2: numberLabel2, numberLabel3: numberLabel3)
         scoreBoard = ScoreBoard(scoreLabel: scoreLabel)
         recordBoard = RecordBoard(recordTextView: recordTextView)
-        util = Util()
-        util!.changeLabel(label: (scoreBoard?.scoreLabel!)!, msg: "Press '시작'")
+        Util.changeLabel(label: (scoreBoard?.scoreLabel)!, msg: "Press '시작'")
     }
     
     
@@ -65,9 +63,9 @@ class NewViewController: UIViewController {
     // 숫자 버튼 클릭 시 실행
     @IBAction func handleNumberButton(_ sender: UIButton) {
         guard let player = player, let numberBoard = numberBoard else{ return }
-        if player.isRunning! && player.playerLastIndex! < numberBoard.numberLabelsCount!{
-            player.playerNumbers = numberBoard.input(aNumber: sender, in: player.playerNumbers!)
-            numberBoard.present(playerNumbers: player.playerNumbers!, in: sender)
+        if player.isRunning && player.playerLastIndex! < numberBoard.numberLabelsCount!{
+            player.playerNumbers = numberBoard.input(aNumber: sender, in: player.playerNumbers)
+            numberBoard.present(playerNumbers: player.playerNumbers, in: sender)
         }
     }
     
@@ -76,13 +74,13 @@ class NewViewController: UIViewController {
     @IBAction func handleCheckButton(_ sender: UIButton) {
         guard let _ = player, let judge = judge, let scoreBoard = scoreBoard, let _ = numberBoard else{ return }
         
-        print(player!.playerNumbers!)
+        print(player!.playerNumbers)
         // 게임 중이면서 입력 라벨에 넘버가 모두 입력돼 있는 경우에만 동작
-        if (player?.isRunning!)! && player?.playerNumbersCount! == numberBoard?.numberLabelsCount!{
-            player?.tryCount! += 1   // 시도 횟수++
-            player?.score = judge.judge(a: player!, with: (player?.randomNumbers!)!)
-            scoreBoard.present(score: player!.score!, of: player!, erase: numberBoard!)
-            recordBoard?.present(score: player!.score!, of: player!)
+        if (player?.isRunning)! && player?.playerNumbersCount! == numberBoard?.numberLabelsCount!{
+            player?.tryCount += 1   // 시도 횟수++
+            player?.score = judge.judge(a: player!, with: (player?.randomNumbers)!)
+            scoreBoard.present(score: player!.score, of: player!, erase: numberBoard!)
+            recordBoard?.present(score: player!.score, of: player!)
         }
     }
     
@@ -95,8 +93,8 @@ class NewViewController: UIViewController {
         }
         
         // 취소 버튼은 게임중에만 동작함
-        if player.isRunning!{
-            player.playerNumbers = numberBoard.eraseLastNumber(from: player.playerNumbers!)
+        if player.isRunning{
+            player.playerNumbers = numberBoard.eraseLastNumber(from: player.playerNumbers)
         }
     }
 
