@@ -100,7 +100,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func coke(_ sender: Any) {
-        operate(2200, menuIdx: 0)
+        operate(2200, menuIdx: (sender as! UIButton).tag)
         if isSoldOut == true{
             menu_coke.text = "품절"
             menu_coke.textColor = UIColor.red

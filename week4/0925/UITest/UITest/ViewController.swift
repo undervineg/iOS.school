@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let subView2 = UIView.init(frame: CGRect.init(x: 15, y: view.bounds.height-115, width: 345, height: 100))
         subView2.backgroundColor = UIColor.blue
         view.addSubview(subView2)
- 
+ */
         
         let subView = UIView.init(frame: CGRect.init(x: 15, y: 15, width: view.frame.width-15*2, height: view.frame.height-15*2))
         subView.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
@@ -51,8 +51,7 @@ class ViewController: UIViewController {
         subView.addSubview(subView2)
         subView2.addSubview(subView3)
         subView3.addSubview(subView4)
- */
-        
+ 
 
     }
 
